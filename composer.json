@@ -1,0 +1,41 @@
+{
+  "name": "melihovv/collection-grouped-by-model",
+  "description": "A collection grouped by model",
+  "license": "MIT",
+  "keywords": [
+    "collection",
+    "grouped",
+    "laravel"
+  ],
+  "authors": [
+    {
+      "name": "Alexander Melihov",
+      "email": "amelihovv@ya.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/support": "~5.5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Melihovv\\CollectionGroupedByModel\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Melihovv\\CollectionGroupedByModel\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "phpunit": "phpunit"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
