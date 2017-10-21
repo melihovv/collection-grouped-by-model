@@ -1,9 +1,9 @@
 # Collection Grouped By Model
 
 [![Build Status](https://travis-ci.org/melihovv/collection-grouped-by-model.svg?branch=master)](https://travis-ci.org/melihovv/collection-grouped-by-model)
-[![styleci](https://styleci.io/repos/CHANGEME/shield)](https://styleci.io/repos/CHANGEME)
+[![styleci](https://styleci.io/repos/107822001/shield)](https://styleci.io/repos/107822001)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/melihovv/collection-grouped-by-model/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/melihovv/collection-grouped-by-model/?branch=master)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/CHANGEME/mini.png)](https://insight.sensiolabs.com/projects/CHANGEME)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0cbdb2a1-cbed-4232-9c0a-48a78cf741ef/mini.png)](https://insight.sensiolabs.com/projects/0cbdb2a1-cbed-4232-9c0a-48a78cf741ef)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/collection-grouped-by-model.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
 [![Packagist](https://poser.pugx.org/melihovv/collection-grouped-by-model/d/total.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
