@@ -1,16 +1,16 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Melihovv\CollectionGroupedByModel;
 
+use Countable;
 use ArrayAccess;
 use ArrayIterator;
-use BadMethodCallException;
-use Countable;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Collection;
 use IteratorAggregate;
+use BadMethodCallException;
+use Illuminate\Support\Collection;
+use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * @mixin Collection
@@ -78,14 +78,14 @@ class CollectionGroupedByModel implements ArrayAccess, Countable, Arrayable, Ite
         foreach ($this->collection->all() as $key => $value) {
             $groupKeys = $groupBy($value, $key);
 
-            if (!is_array($groupKeys)) {
+            if (! is_array($groupKeys)) {
                 $groupKeys = [$groupKeys];
             }
 
             foreach ($groupKeys as $groupKey) {
-                $groupKey = is_bool($groupKey) ? (int)$groupKey : $groupKey;
+                $groupKey = is_bool($groupKey) ? (int) $groupKey : $groupKey;
 
-                if (!array_key_exists($groupKey, $results)) {
+                if (! array_key_exists($groupKey, $results)) {
                     $results[$groupKey] = (new static)->setModel($getModel($value));
                 }
 
@@ -106,7 +106,7 @@ class CollectionGroupedByModel implements ArrayAccess, Countable, Arrayable, Ite
      */
     public function __call($method, $parameters)
     {
-        if (!method_exists($this->collection, $method)) {
+        if (! method_exists($this->collection, $method)) {
             throw new BadMethodCallException("Method {$method} does not exist.");
         }
 
@@ -183,4 +183,3 @@ class CollectionGroupedByModel implements ArrayAccess, Countable, Arrayable, Ite
         return $this->collection->getIterator();
     }
 }
-
