@@ -9,7 +9,7 @@
 [![Packagist](https://poser.pugx.org/melihovv/collection-grouped-by-model/d/total.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
 [![Packagist](https://img.shields.io/packagist/l/melihovv/collection-grouped-by-model.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
 
-A collection grouped by model.
+This package allows easily group laravel collection by any php object (model, array/collection of models, etc), not only by scalars (strings, numbers, booleans).
 
 ## Installation
 
