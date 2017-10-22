@@ -30,8 +30,56 @@ $postsGroupedByAuthor = (new CollectionGroupedByModel($posts))
     });
 
 foreach ($postsGroupedByAuthor as $authorPosts) {
-  $authorPosts->model() // returns posts' author
-  $authorPosts->collection() // returns author's posts
+  $authorPosts->model(); // returns posts' author
+  $authorPosts->collection(); // returns author's posts
+}
+```
+
+### Nested grouping: first group products by category, then by manufacturer.
+
+```
+$products = Product::all();
+$groupedProducts = (new CollectionGroupedByModel($products))
+    ->groupByModel(function (Product $product) {
+      return $product->category_id;
+    }, function (Product $product) {
+      return $product->category;
+    })
+    ->transform(function (CollectionGroupedByModel $productsGroupedByCategory) {
+      return $productsGroupedByCategory
+        ->groupByModel(function (Product $product) {
+          return $product->manufacturer_id;
+        }, function (Product $product) {
+          return $product->manufacturer;
+        });
+    });
+
+foreach ($groupedProducts as $categoryProducts) {
+  $categoryProducts->model(); // returns category
+  
+  foreach ($categoryProducts->collection() as $manufacturerProducts) {
+    $manufacturerProducts->model(); // returns manufacturer
+    $manufacturerProducts->collection(); // returns products grouped by category and manufacturer
+  }
+}
+```
+
+### Group by several models
+
+```
+$posts = Post::all()
+$postsGroupedByAuthorAndCategory = (new CollectionGroupedByModel($posts))
+    ->groupByModel(function (Post $post) {
+      return "$post->author_id,$post->category_id";
+    }, function (Post $post) {
+      return [$post->author, $post->category];
+    });
+
+foreach ($postsGroupedByAuthorAndCategory as $authorPostsInCategory) {
+  list($author, $category) = $authorPostsWithCategory->model();
+  // or using php 7.1 array destruction
+  [$author, $category] = $authorPostsWithCategory->model();
+  $authorPostsWithCategory->collection(); // returns author's posts in category
 }
 ```
 
