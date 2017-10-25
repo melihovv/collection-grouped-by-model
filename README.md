@@ -20,7 +20,7 @@ composer require melihovv/collection-grouped-by-model
 
 ## Usage
 
-```
+```php
 $posts = Post::all()
 $postsGroupedByAuthor = (new CollectionGroupedByModel($posts))
     ->groupByModel(function (Post $post) {
@@ -37,7 +37,7 @@ foreach ($postsGroupedByAuthor as $authorPosts) {
 
 ### Nested grouping: first group products by category, then by manufacturer.
 
-```
+```php
 $products = Product::all();
 $groupedProducts = (new CollectionGroupedByModel($products))
     ->groupByModel(function (Product $product) {
@@ -66,7 +66,7 @@ foreach ($groupedProducts as $categoryProducts) {
 
 ### Group by several models
 
-```
+```php
 $posts = Post::all()
 $postsGroupedByAuthorAndCategory = (new CollectionGroupedByModel($posts))
     ->groupByModel(function (Post $post) {
