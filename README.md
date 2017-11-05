@@ -4,6 +4,7 @@
 [![styleci](https://styleci.io/repos/107822001/shield)](https://styleci.io/repos/107822001)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/melihovv/collection-grouped-by-model/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/melihovv/collection-grouped-by-model/?branch=master)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0cbdb2a1-cbed-4232-9c0a-48a78cf741ef/mini.png)](https://insight.sensiolabs.com/projects/0cbdb2a1-cbed-4232-9c0a-48a78cf741ef)
+[![Coverage Status](https://coveralls.io/repos/github/melihovv/collection-grouped-by-model/badge.svg?branch=master)](https://coveralls.io/github/melihovv/collection-grouped-by-model?branch=master)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/collection-grouped-by-model.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
 [![Packagist](https://poser.pugx.org/melihovv/collection-grouped-by-model/d/total.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
