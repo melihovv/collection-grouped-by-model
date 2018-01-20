@@ -67,16 +67,16 @@ class CollectionGroupedByModel implements ArrayAccess, Countable, Arrayable, Ite
     /**
      * Group a collection using a callback.
      *
-     * @param callable $groupBy
-     * @param callable $getModel
+     * @param string|callable $groupBy
+     * @param string|callable $model
      * @return static
      */
-    public function groupByModel(callable $groupBy, callable $getModel)
+    public function groupByModel($groupBy, $model)
     {
         $results = [];
 
         foreach ($this->collection->all() as $key => $value) {
-            $groupKeys = $groupBy($value, $key);
+            $groupKeys = is_callable($groupBy) ? $groupBy($value, $key) : $value->$groupBy;
 
             if (! is_array($groupKeys)) {
                 $groupKeys = [$groupKeys];
@@ -86,7 +86,7 @@ class CollectionGroupedByModel implements ArrayAccess, Countable, Arrayable, Ite
                 $groupKey = is_bool($groupKey) ? (int) $groupKey : $groupKey;
 
                 if (! array_key_exists($groupKey, $results)) {
-                    $results[$groupKey] = (new static)->setModel($getModel($value));
+                    $results[$groupKey] = (new static)->setModel(is_callable($model) ? $model($value) : $value->$model);
                 }
 
                 $results[$groupKey]->offsetSet(null, $value);

@@ -23,12 +23,7 @@ composer require melihovv/collection-grouped-by-model
 
 ```php
 $posts = Post::all()
-$postsGroupedByAuthor = (new CollectionGroupedByModel($posts))
-    ->groupByModel(function (Post $post) {
-      return $post->author_id;
-    }, function (Post $post) {
-      return $post->author;
-    });
+$postsGroupedByAuthor = (new CollectionGroupedByModel($posts))->groupByModel('author_id', 'author');
 
 foreach ($postsGroupedByAuthor as $authorPosts) {
   $authorPosts->model(); // returns posts' author
@@ -41,18 +36,9 @@ foreach ($postsGroupedByAuthor as $authorPosts) {
 ```php
 $products = Product::all();
 $groupedProducts = (new CollectionGroupedByModel($products))
-    ->groupByModel(function (Product $product) {
-      return $product->category_id;
-    }, function (Product $product) {
-      return $product->category;
-    })
+    ->groupByModel('category_id', 'category')
     ->transform(function (CollectionGroupedByModel $productsGroupedByCategory) {
-      return $productsGroupedByCategory
-        ->groupByModel(function (Product $product) {
-          return $product->manufacturer_id;
-        }, function (Product $product) {
-          return $product->manufacturer;
-        });
+      return $productsGroupedByCategory->groupByModel('manufacturer_id', 'manufacturer');
     });
 
 foreach ($groupedProducts as $categoryProducts) {
