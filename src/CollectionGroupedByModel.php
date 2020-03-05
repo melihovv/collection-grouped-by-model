@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Melihovv\CollectionGroupedByModel;
 
-use Countable;
 use ArrayAccess;
 use ArrayIterator;
-use IteratorAggregate;
 use BadMethodCallException;
-use Illuminate\Support\Collection;
+use Countable;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Collection;
+use IteratorAggregate;
 
 /**
  * @mixin Collection
