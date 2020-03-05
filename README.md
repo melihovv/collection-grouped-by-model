@@ -1,8 +1,7 @@
 # Collection Grouped By Model
 
-[![Build Status](https://travis-ci.org/melihovv/collection-grouped-by-model.svg?branch=master)](https://travis-ci.org/melihovv/collection-grouped-by-model)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/melihovv/collection-grouped-by-model/run-php-tests?label=Tests)
 [![styleci](https://styleci.io/repos/107822001/shield)](https://styleci.io/repos/107822001)
-[![Coverage Status](https://coveralls.io/repos/github/melihovv/collection-grouped-by-model/badge.svg?branch=master)](https://coveralls.io/github/melihovv/collection-grouped-by-model?branch=master)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/collection-grouped-by-model.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
 [![Packagist](https://poser.pugx.org/melihovv/collection-grouped-by-model/d/total.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
@@ -41,7 +40,7 @@ $groupedProducts = (new CollectionGroupedByModel($products))
 
 foreach ($groupedProducts as $categoryProducts) {
   $categoryProducts->model(); // returns category
-  
+
   foreach ($categoryProducts->collection() as $manufacturerProducts) {
     $manufacturerProducts->model(); // returns manufacturer
     $manufacturerProducts->collection(); // returns products grouped by category and manufacturer
