@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Melihovv\CollectionGroupedByModel\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Melihovv\CollectionGroupedByModel\CollectionGroupedByModel;
+use PHPUnit\Framework\TestCase;
 
 class CollectionGroupedByModelTest extends TestCase
 {
