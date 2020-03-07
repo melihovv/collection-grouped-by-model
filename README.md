@@ -1,6 +1,6 @@
 # Collection Grouped By Model
 
-![GitHub Workflow Status](https://github.com/melihovv/collection-grouped-by-model/workflows/Run%20tests/badge.svg)
+[![GitHub Workflow Status](https://github.com/melihovv/collection-grouped-by-model/workflows/Run%20tests/badge.svg)](https://github.com/melihovv/collection-grouped-by-model/actions)
 [![styleci](https://styleci.io/repos/107822001/shield)](https://styleci.io/repos/107822001)
 
 [![Packagist](https://img.shields.io/packagist/v/melihovv/collection-grouped-by-model.svg)](https://packagist.org/packages/melihovv/collection-grouped-by-model)
